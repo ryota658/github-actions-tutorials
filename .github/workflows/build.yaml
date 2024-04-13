@@ -11,9 +11,11 @@ jobs:
     steps:
       - name: Checkout project
         uses: actions/checkout@v3
-      - name: TypeScript Build
-        uses: alexthemaster/action-build-typescript@v1.3.1
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          pushToBranch: true # optional; can either be true or false | defaults to false
-          branch: 'dist' # optional; the name of the branch the action should push the compiled code to | defaults to dist
-          githubToken: ${{ secrets.GITHUB_TOKEN }} # required if you use the pushToBranch option
+          node-version: '14'
+      - name: Install dependencies
+        run: npm install
+      - name: Build TypeScript
+        run: npm run build

@@ -19,3 +19,5 @@ jobs:
         run: npm install
       - name: Build TypeScript
         run: npm run build
+      - name: lint TypeScript 
+        run: npm run lint

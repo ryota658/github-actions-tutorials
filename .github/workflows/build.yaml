@@ -23,3 +23,5 @@ jobs:
         run: npm run build
       - name: lint TypeScript 
         run: npm run lint
+      - name: test TypeScript
+        run: npm run test
